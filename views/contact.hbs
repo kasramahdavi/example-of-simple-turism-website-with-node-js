@@ -1,0 +1,41 @@
+  <!--contacts-->
+          
+        <section class="contact">
+            <h1 class="contact-heading">shair with us</h1>
+              <form action="/contact" method="POST" class="content-form center">
+                <div type=" " class="input-group">
+                    <label for="">full name  </label>
+                    <input type="text" name="name" class="contact-input" placeholder="enter your name">
+                 </div>
+                
+                <div type="" class="input-group">
+                    <label for="">email  </label>
+                    <input type="email" name="email" class="contact-input" placeholder="enter your email">
+                </div>
+              
+              
+                <div type=" " class="input-group-text">
+                    <label for="">comment</label>
+                   <textarea class="form-textarea" name="comment" cols="30" rows="10" placeholder="your messege here ...."></textarea>
+
+                </div>
+                <input type="submit" value="submit" class="form-btn">
+            </form>
+            <div id="frame">
+              <div class="">
+               
+                 {{#each comments}}
+                 {{#each this}}
+           <div class="this">
+                  <h4 id="commentheader" class="">{{this.name}}</h4>
+                  <p id="commentemail " class="">{{this.email}}</p>
+                  <p id="commentbody "class="">{{this.comment}}</p>
+                  
+              </div>
+                {{/each}}
+                   {{/each}}
+                   </div>
+                   </div>
+            </div>
+        </section>
+        <!--end of contacts-->

@@ -1,0 +1,21 @@
+upload(req,res,function(err){
+        if(err){
+            console.log(err);
+            return res.end("algo falta");
+        }else{
+            console.log(req.file.path);
+
+            var filename =req.file.path;
+            var imageg = new imagemodels({
+              
+                imagename:filename
+            });
+            imageg.save(function(err,doc){
+                if(err) throw err;
+                imagedata.exec(function(err,data){
+                  if(err) throw err;
+                  res.render('stories',{records:data, success:true})
+                })
+            })
+        }
+    })

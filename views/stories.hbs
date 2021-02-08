@@ -1,0 +1,52 @@
+  <!--stories-->
+        <section class="stories">
+            <div class="video-container">
+                <video class="bg-video" autoplay muted loop>
+                    <source src="images/video.mp4" type="video/mp4"/>
+                </video>
+          
+            </div>
+            <div class="stories-wrapper">
+                <div class="story-single">
+                    <div class="story">
+
+                        <h3>shair your experice</h3>
+                       <form class="image-wrapper" action="/stories" method='POST'  enctype="multipart/form-data">
+                    
+                       <div class="group">
+                       <label for="select image">image</label>
+                       <input type="file" required  name="image" >
+                       </div>
+                        <div class="group">
+            <button class="btn btn-block btn-danger">
+                Upload Image
+            </button>
+        </div>
+                       
+                       </form>
+                     </div>
+                 </div>
+                 <div class="story-single">
+                    <div class="story">
+                       <style>
+                         .imgcont{
+margin-bottom: 9rem;
+                         }
+                       </style>
+                       <div class="imgcont">
+              {{#each records}}
+              {{#each this}}
+                   
+
+                          <img class="img" src="upload/{{this.imagename}}" style="width: 100%;" alt="">
+                          
+                 {{/each}}
+              {{/each}}
+              </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end stories-->
+        
